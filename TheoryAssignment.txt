@@ -1,0 +1,115 @@
+1.What is Emmet?
+-> Emmet is a tool in vscode, using which we can right simple abbreviation,
+    which then gets converted to code blocks
+-> Ref: https://blog.logrocket.com/type-html-faster-react-emmet-vs-code/#emmet-abbreviations
+    Ref above link to configure emmet in vscode for jsreact and tsreact and get started
+
+-------------------------------------------------------------------------------------------------
+
+2.What is the difference between library and framework
+-> Main difference lies in who's calling whom?
+-> In case of library(small peices of code providing various functionality) is called by our code
+    i.e our code is main program, library functionalities act as add on to our code.
+-> In case of framework(full fledged collection of code with many functionalities), 
+    framework calls our code here and there where we need to alter frsmework's code 
+    i.e frameworks code is main program and oud code just acts as add on code
+-> Ref: https://www.interviewbit.com/blog/framework-vs-library/
+
+-------------------------------------------------------------------------------------------------
+
+3.What is CDN? Why do we use it?
+-> A CDN(Content Delivery Network) is a collection of servers distributes content 
+    from the origin server around the globe
+-> Caches the content in these servers,
+   close to each user accessing the internet from a web enabled device
+-> CDN is also refered to as "the edge", meaning where physcical and digital world meet.
+-> Servers in the CDN are called edge servers
+-> The location where these edge servers are called PoPs(Point of Presence)
+-> Benefits:
+        =>Reduced Page load time
+        =>Improved availability
+        =>Increased scalability
+        =>Icreased security
+        =>Reduced bandwidth costs
+-> Ref:
+    https://www.akamai.com/our-thinking/cdn/what-is-a-cdn#:~:text=A%20CDN%20is%20a%20network,and%20stored%20elsewhere%20as%20needed.
+    https://www.fastly.com/learning/what-is-a-cdn
+    https://www.youtube.com/watch?v=RI9np1LWzqw
+
+-------------------------------------------------------------------------------------------------
+
+4.Why is React known as React?
+-> React is called React because it was designed to be a declarative, efficient, and flexible
+   JavaScript library for building user interfaces.
+-> The name "React" was chosen because the library was designed to allow developers to "react"
+   to changes in state and data within an application,
+   and to update the user interface in a declarative and efficient manner.
+-> Ref: https://www.quora.com/Why-is-React-called-React
+   Namaste React Community Ref Notes : https://bold-cymbal-ce2.notion.site/Chapter-01-Inception-1d945cd559754934875e2639a0681ad8
+
+-------------------------------------------------------------------------------------------------
+
+5.What is crossorigin in script tag?
+-> The crossorigin attribute, valid on the <audio>, <img>, <link>, <script>, and <video> elements,
+    provides support for CORS, defining how the element handles cross-origin requests,
+    thereby enabling the configuration of the CORS requests for the element's fetched data. 
+    Depending on the element, the attribute can be a CORS settings attribute.
+    These attributes are enumerated and can take values like anonymous, use-credentials, ""
+    Ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin
+    YT Ref: https://youtu.be/m6lsF8z0hKk
+    Related info Ref: 
+    1.CORS : https://www.youtube.com/watch?v=tcLW5d0KAYE
+    2.enumerated data-type : https://developer.mozilla.org/en-US/docs/Glossary/Enumerated
+
+-------------------------------------------------------------------------------------------------
+
+6.What is the difference between React and ReactDOM?
+-> React is a licrary responsible for creating views
+   ReactDOM is a library responsible for actually rendering UI in the browser.
+   Ref: https://www.geeksforgeeks.org/how-react-and-reactdom-works/
+
+-------------------------------------------------------------------------------------------------
+
+7.What is the difference between react.development.js and react.production.js via CDN?
+-> react.development.js gives us HMR, debugging functionalities etc which we will require during development
+    react.production.js wont have all those files as those files have already performed their work during development
+    Ref: https://stackoverflow.com/questions/48151128/difference-between-production-and-development-build-in-reactjs#:~:text=The%20development%20build%20is%20used,running%20on%20your%20client's%20machine.
+    Namaste React Community Ref Notes : https://bold-cymbal-ce2.notion.site/Chapter-01-Inception-1d945cd559754934875e2639a0681ad8
+
+-------------------------------------------------------------------------------------------------
+
+8.What is async and defer? (Watch Akshay Saini's YT video)
+-> 2 major things happen on webpage load -> HTML parsing and script load
+    <script src="">
+    In this normal case, HTML parsing starts, 
+    pauses when encounters script tag, 
+    loads the script, 
+    executes the script,
+    on completing script execution, continues parsing HTML
+
+    <script async src="">
+    In this case, HTML parsing starts,
+    meanwhile loads scripts from the network,
+    when HTML parsing encounters script tag,
+    starts executing scripts,
+    on completing script execution, continues HTML parsing
+
+    <script defer src="">
+    In this case, HTML parsing starts,
+    meanwhile loads scripts from the network,
+    when HTML parsing encounters script tag,
+    HTML parsing is not paused,
+    instead it completes full parsing,
+    on completing HTML parsing, startes executing scripts 
+
+    So when to use what?
+    Ex 1.Drawback of using async : Using async doesnt guarentee the execution order of the scripts,
+    say if there are 2 scripts and script2 is dependant on script1,
+    but script2 executes first, which will fail as script1 isnt executed yet. So in this case you can go for defer.
+    Ex 2.In case of us using a script say Google analytics which is modular, independant code,
+    in that case its okay to go for async. 
+    Otherwise it is wise to defer as it gives best of both worlds.
+
+    Ref: https://www.youtube.com/watch?v=IrHmpdORLu8
+
+-------------------------------------------------------------------------------------------------

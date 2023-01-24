@@ -1,0 +1,35 @@
+1.What do you mean by attributes in html are enumerated?
+Enumerated data-typed means the attribute has a set of values and has a default value.
+
+2.What is React element at the end of the day? -> Its a JS Object.
+
+3.We can just use React to only our search bar if we want in our entire application; we need to make our search bar bar as root element in that case
+
+4.Mostly we have only one root in our React application
+
+5.<div id="root">
+        <h1>Hello</h1>
+        <h1>Hello</h1>
+        <h1>Hello</h1>
+        <h1>Hello</h1>
+        <h1>Hello</h1>
+        <h1>Hello</h1>
+        <h1>Hello</h1>
+        <h1>Hello</h1>
+</div>
+<h1 id="footer">Footer</h1>
+.
+.
+.
+root.render(heading);
+
+In the above case the multiple Hello s gets rendered first and React quickly repaints those Hello s with heading element as root.render(heading) is mentioned
+
+->Why that lag? Because for React and ReactDOM to load it takes some milliseconds right, until then html file will be executed from top to bottom and would have encountered
+root element and rendered multiple Hello s inside root. Then when script tags are loaded when root.render happens, then heading element gets injected to root(repainting the multiple Hello s)
+
+->How to minimize this lag? Actually one cant, it can only be reduced to min millisecond
+
+6.React was built with the thought that we should be able to write html and css inside our js file...
+
+7.As and when the application grows larger it becomes harder and harder to use React.createElement() for creating every element or nested elements, hence JSX came into picture
